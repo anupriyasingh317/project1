@@ -1,0 +1,35 @@
+/* sidebar.component.css */
+.sidebar {
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: #fff;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  flex-grow: 1; /* Allow the ul to grow and fill the remaining height */
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+}
+
+a:hover {
+  background-color: #555;
+}
+
+.active {
+  background-color: #555;
+}

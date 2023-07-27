@@ -1,0 +1,96 @@
+<div class="flex flex-col flex-auto min-w-0">
+
+        <!-- Header -->
+        <div class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent">
+        
+        <a class="whitespace-nowrap text-primary-500"><h1>DATA</h1></a>
+         </div>
+        <div class="flex items-center ml-1 whitespace-nowrap">
+        <!-- <mat-icon
+       class="icon-size-5 text-secondary"
+        [svgIcon]="'heroicons_solid:chevron-right'"></mat-icon> -->
+        <a class="ml-1 text-primary-500">hjhjjh </a>
+        
+        <!-- Title -->
+        <div class="mt-2">
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate"> hii
+        </h2>
+
+        <div>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Start Date</mat-label>
+            <input matInput [matDatepicker]="startDatePicker" [(ngModel)]="startDate">
+            <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+            <mat-datepicker #startDatePicker></mat-datepicker>
+          </mat-form-field>
+          
+          <mat-form-field appearance="fill">
+            <mat-label>End Date</mat-label>
+            <input matInput [matDatepicker]="endDatePicker" [(ngModel)]="endDate">
+            <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+            <mat-datepicker #endDatePicker></mat-datepicker>
+          </mat-form-field>
+          <button (click)="searchConnections()">Search</button>
+            <br>
+            <br>
+
+          <label for="applicantId">Applicant ID:</label>
+          <!-- <input type="text" id="applicantId" #IdInput >
+          <button (click)="searchConnection(IdInput.value)">Search</button> -->
+          <input type="number" [(ngModel)]="searchApplicantId"  />
+          <button (click)="searchConnections()">Search</button>
+<!--           
+          <button (click)="resetFilter()">Reset</button> -->
+        </div>
+        </div>
+        </div>
+       <div>
+      
+<table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Applicant Name</th>
+        <th>Gender</th>
+        <th>District</th>
+        <th>State</th>
+        <th>Pincode</th>
+        <th>Ownership</th>
+        <th>GovtID Type</th>
+        <th>ID Number</th>
+        <th>Category</th>
+        <th>Load Applied (in KV)</th>
+        <th>Date of Application</th>
+        <th>Date of Approval</th>
+        <th>Modified Date</th>
+        <th>Status</th>
+        <th>Reviewer ID</th>
+        <th>Reviewer Name</th>
+        <th>Reviewer Comments</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let connection of connections">
+        <td>{{ connection.id }}</td>
+        <td>{{ connection.Applicant_Name }}</td>
+        <td>{{ connection.Gender }}</td>
+        <td>{{ connection.District }}</td>
+        <td>{{ connection.State }}</td>
+        <td>{{ connection.Pincode }}</td>
+        <td>{{ connection.Ownership }}</td>
+        <td>{{ connection.GovtID_Type }}</td>
+        <td>{{ connection.ID_Number }}</td>
+        <td>{{ connection.Category }}</td>
+        <td>{{ connection['Load_Applied (in KV)'] }}</td>
+        <td>{{ connection.Date_of_Application }}</td>
+        <td>{{ connection.Date_of_Approval }}</td>
+        <td>{{ connection.Modified_Date }}</td>
+        <td>{{ connection.Status }}</td>
+        <td>{{ connection.Reviewer_ID }}</td>
+        <td>{{ connection.Reviewer_Name }}</td>
+        <td>{{ connection.Reviewer_Comments }}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div></div>

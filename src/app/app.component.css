@@ -1,0 +1,10 @@
+/* app.component.css */
+.app-container {
+    display: flex;
+    height: 100vh; /* Set the height of the container to 100% of the viewport height */
+  }
+  
+  .content {
+    flex-grow: 1; /* Allow the content div to grow and fill the remaining width */
+  }
+  

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Connection Visualization</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div>
+        <label>Status:</label>
+        <select id="status" onchange="updateChart()">
+            <option value="all">All</option>
+            <option value="pending">Pending</option>
+            <option value="approved">Approved</option>
+            <option value="rejected">Rejected</option>
+        </select>
+        <label>Month:</label>
+        <select id="month" onchange="updateChart()">
+            <option value="all">All</option>
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="March">March</option>
+            <!-- Add more months as needed -->
+        </select>
+    </div>
+    <div style="max-width: 600px;">
+        <canvas id="connectionChart"></canvas>
+    </div>
+
+    <script>
+        function updateChart() {
+            const status = document.getElementById('status').value;
+            const month = document.getElementById('month').value;
+            const url = `/api/connections?status=${status}&month=${month}`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const labels = data.map(item => item.month);
+                    const counts = data.map(item => item.count);
+
+                    const ctx = document.getElementById('connectionChart').getContext('2d');
+                    const connectionChart = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                label: 'Number of Connection Requests',
+                                data: counts,
+                                backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                                borderColor: 'rgba(54, 162, 235, 1)',
+                                borderWidth: 1,
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        }
+
+        // Initial chart update
+        updateChart();
+    </script>
+</body>
+</html>
