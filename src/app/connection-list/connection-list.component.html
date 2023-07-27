@@ -9,11 +9,11 @@
         <!-- <mat-icon
        class="icon-size-5 text-secondary"
         [svgIcon]="'heroicons_solid:chevron-right'"></mat-icon> -->
-        <a class="ml-1 text-primary-500">hjhjjh </a>
+        <a class="ml-1 text-primary-500"></a>
         
         <!-- Title -->
         <div class="mt-2">
-        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate"> hii
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate"> 
         </h2>
 
         <div>
@@ -35,19 +35,17 @@
             <br>
             <br>
 
-          <label for="applicantId">Applicant ID:</label>
-          <!-- <input type="text" id="applicantId" #IdInput >
-          <button (click)="searchConnection(IdInput.value)">Search</button> -->
-          <input type="number" [(ngModel)]="searchApplicantId"  />
-          <button (click)="searchConnections()">Search</button>
-<!--           
-          <button (click)="resetFilter()">Reset</button> -->
+          <mat-label for="applicantId">Applicant ID:</mat-label>
+         
+           <mat-input type="number" [(ngModel)]="searchApplicantId"  />
+          <button  (click)="searchConnections()">Search</button>
+
         </div>
         </div>
         </div>
-       <div>
+       <div> 
       
-<table>
+ <table>
     <thead>
       <tr>
         <th>ID</th>
@@ -92,5 +90,5 @@
         <td>{{ connection.Reviewer_Comments }}</td>
       </tr>
     </tbody>
-  </table>
+  </table> 
   </div></div>

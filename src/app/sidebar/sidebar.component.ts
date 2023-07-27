@@ -1,8 +1,6 @@
 
 import { Component } from '@angular/core';
 
-
-
 interface NavItem {
   title: string;
   link: string;

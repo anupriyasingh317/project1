@@ -10,6 +10,8 @@ import { ConnectionChartComponent } from './connection-chart/connection-chart.co
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
+
 
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
@@ -18,7 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DatePipe } from '@angular/common';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
-import { ChartsModule } from 'ng2-charts';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { ChartsModule } from 'ng2-charts';
     MatInputModule,
     MatNativeDateModule,
     BrowserAnimationsModule,
-    ChartsModule,
+    NgChartsModule,
+    MatButtonModule,
    
     
   ],
